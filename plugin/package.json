@@ -1,0 +1,20 @@
+{
+	"name": "gorres-blocks",
+	"version": "1.0.0",
+	"description": "A collection of lightweight blocks for the block editor that can be enabled individually",
+	"author": "Jörn Gorres",
+	"license": "GPL-2.0-or-later",
+	"private": true,
+	"homepage": "https://github.com/jgorres/gorres-blocks-plugin",
+	"scripts": {
+		"build": "wp-scripts build --blocks-manifest --webpack-src-dir=src --output-path=build",
+		"start": "wp-scripts start --blocks-manifest --webpack-src-dir=src --output-path=build"
+	},
+	"devDependencies": {
+		"@wordpress/block-editor": "^17.1.0",
+		"@wordpress/blocks": "^16.0.0",
+		"@wordpress/components": "^40.1.0",
+		"@wordpress/i18n": "^6.28.0",
+		"@wordpress/scripts": "^35.0.0"
+	}
+}
