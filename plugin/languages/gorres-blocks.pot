@@ -2,14 +2,14 @@
 # This file is distributed under the GPL v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Gorres Blocks 1.1.0\n"
+"Project-Id-Version: Gorres Blocks 1.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/gorres-blocks\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-06T15:44:51+00:00\n"
+"POT-Creation-Date: 2026-10-06T19:31:04+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: gorres-blocks\n"
@@ -81,4 +81,131 @@ msgstr ""
 
 #: includes/admin.php:194
 msgid "Enabled"
+msgstr ""
+
+#: src/hero-teaser/edit.js:40
+msgid "Teaser headline"
+msgstr ""
+
+#: src/hero-teaser/edit.js:46
+msgid "A few sentences that make people read on …"
+msgstr ""
+
+#: src/hero-teaser/edit.js:55
+msgid "Left"
+msgstr ""
+
+#: src/hero-teaser/edit.js:56
+msgid "Center"
+msgstr ""
+
+#: src/hero-teaser/edit.js:57
+msgid "Right"
+msgstr ""
+
+#: src/hero-teaser/edit.js:171
+msgid "Replace image"
+msgstr ""
+
+#: src/hero-teaser/edit.js:174
+msgid "Remove image"
+msgstr ""
+
+#: src/hero-teaser/edit.js:180
+msgid "Image"
+msgstr ""
+
+#: src/hero-teaser/edit.js:185
+msgid "Focal point"
+msgstr ""
+
+#: src/hero-teaser/edit.js:194
+msgid "Alternative text"
+msgstr ""
+
+#: src/hero-teaser/edit.js:198
+msgid "Leave empty to use the alternative text from the media library."
+msgstr ""
+
+#: src/hero-teaser/edit.js:212
+msgid "Dimming (%)"
+msgstr ""
+
+#: src/hero-teaser/edit.js:223
+msgid "Teaser box"
+msgstr ""
+
+#: src/hero-teaser/edit.js:228
+msgid "Horizontal position"
+msgstr ""
+
+#: src/hero-teaser/edit.js:245
+msgid "Start position (%)"
+msgstr ""
+
+#: src/hero-teaser/edit.js:246
+msgid "Distance of the box from the top edge of the image when the page loads, as a share of the screen height."
+msgstr ""
+
+#: src/hero-teaser/edit.js:263
+msgid "Width (%)"
+msgstr ""
+
+#: src/hero-teaser/edit.js:264
+msgid "Share of the available width. On narrow screens the box uses at least 20rem or the full width."
+msgstr ""
+
+#: src/hero-teaser/edit.js:281
+msgid "Fixed header"
+msgstr ""
+
+#: src/hero-teaser/edit.js:287
+msgid "Offset from the top (px)"
+msgstr ""
+
+#: src/hero-teaser/edit.js:291
+msgid "Height of a fixed header of the theme, so the image sticks right below it. The admin bar is taken into account automatically."
+msgstr ""
+
+#: src/hero-teaser/edit.js:319
+msgid "Hero image"
+msgstr ""
+
+#: src/hero-teaser/edit.js:320
+msgid "Choose an image from the media library or upload one."
+msgstr ""
+
+#: src/hero-teaser/block.json
+msgctxt "block title"
+msgid "Hero Teaser"
+msgstr ""
+
+#: src/hero-teaser/block.json
+msgctxt "block description"
+msgid "A screen-high image with a teaser box on top. The box scrolls away first, then the image follows and the post comes up."
+msgstr ""
+
+#: src/hero-teaser/block.json
+msgctxt "block keyword"
+msgid "hero"
+msgstr ""
+
+#: src/hero-teaser/block.json
+msgctxt "block keyword"
+msgid "teaser"
+msgstr ""
+
+#: src/hero-teaser/block.json
+msgctxt "block keyword"
+msgid "sticky"
+msgstr ""
+
+#: src/hero-teaser/block.json
+msgctxt "block keyword"
+msgid "scroll"
+msgstr ""
+
+#: src/hero-teaser/block.json
+msgctxt "block keyword"
+msgid "cover"
 msgstr ""

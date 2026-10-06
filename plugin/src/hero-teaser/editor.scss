@@ -1,0 +1,22 @@
+/**
+ * Editor-only styles of the hero teaser block.
+ */
+
+/* The media placeholder fills the image area and stays clickable, so it sits
+   above the track until an image is chosen. */
+.jgor-gblk-hero.has-no-image .jgor-gblk-hero__media {
+	z-index: 2;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.jgor-gblk-hero.has-no-image .jgor-gblk-hero__media .components-placeholder {
+	width: min(100%, 36rem);
+	min-height: 0;
+}
+
+/* Inside the editor the image is only a preview, the box stays editable. */
+.jgor-gblk-hero__media img {
+	pointer-events: none;
+}

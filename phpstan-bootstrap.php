@@ -11,7 +11,7 @@
 
 // Plugin Gorres Blocks (defined in plugin/gorres-blocks.php).
 if ( ! defined( 'JGOR_GBLK_VERSION' ) ) {
-	define( 'JGOR_GBLK_VERSION', '1.1.0' );
+	define( 'JGOR_GBLK_VERSION', '1.2.0' );
 }
 if ( ! defined( 'JGOR_GBLK_MIN_PHP' ) ) {
 	define( 'JGOR_GBLK_MIN_PHP', '8.1' );

@@ -1,0 +1,107 @@
+/**
+ * Front end and editor styles of the hero teaser block.
+ *
+ * The image sticks to the top of the screen and is one screen high. The track
+ * is pulled up over it by the same height and consists of
+ *   start space (share of the screen height) + teaser box + one screen height.
+ * The block is as tall as the track, so the image stays in place while the
+ * box scrolls by and lets go exactly when the bottom edge of the box reaches
+ * the top of the image. No script involved.
+ *
+ * --jgor-gblk-hero-top     where the image sticks: offset for a fixed header
+ *                          plus the admin bar, if any.
+ * --jgor-gblk-hero-height  height of the image: the rest of the screen.
+ */
+
+.jgor-gblk-hero {
+	--jgor-gblk-hero-top: calc(var(--jgor-gblk-hero-offset, 0px) + var(--wp-admin--admin-bar--height, 0px));
+	--jgor-gblk-hero-height: calc(100svh - var(--jgor-gblk-hero-top));
+
+	position: relative;
+	isolation: isolate;
+	box-sizing: border-box;
+}
+
+/* On small screens the admin bar scrolls away with the page, so the image
+   sticks to the very top. */
+@media screen and (max-width: 600px) {
+
+	.jgor-gblk-hero {
+		--jgor-gblk-hero-top: var(--jgor-gblk-hero-offset, 0px);
+	}
+}
+
+.jgor-gblk-hero__media {
+	position: sticky;
+	top: var(--jgor-gblk-hero-top);
+	z-index: 0;
+	height: var(--jgor-gblk-hero-height);
+	overflow: hidden;
+	background-color: #1e1e1e;
+}
+
+/* Dimming keeps the box readable on light images. */
+.jgor-gblk-hero__media::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background-color: #000;
+	opacity: var(--jgor-gblk-hero-dim, 0);
+	pointer-events: none;
+}
+
+.jgor-gblk-hero__media img {
+	display: block;
+	width: 100%;
+	max-width: none;
+	height: 100%;
+	object-fit: cover;
+	object-position: var(--jgor-gblk-hero-focal-x, 50%) var(--jgor-gblk-hero-focal-y, 50%);
+}
+
+.jgor-gblk-hero__track {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	box-sizing: border-box;
+	margin-top: calc(-1 * var(--jgor-gblk-hero-height));
+	padding-top: calc(var(--jgor-gblk-hero-height) * var(--jgor-gblk-hero-start, 0.5));
+	padding-right: max(1rem, var(--wp--style--root--padding-right, 0px));
+	padding-bottom: var(--jgor-gblk-hero-height);
+	padding-left: max(1rem, var(--wp--style--root--padding-left, 0px));
+}
+
+.jgor-gblk-hero.is-box-center .jgor-gblk-hero__track {
+	align-items: center;
+}
+
+.jgor-gblk-hero.is-box-right .jgor-gblk-hero__track {
+	align-items: flex-end;
+}
+
+/* The width setting is a share of the track; on narrow screens the box keeps
+   at least 20rem or the full width, whatever is smaller. */
+.jgor-gblk-hero__box {
+	box-sizing: border-box;
+	width: min(100%, max(var(--jgor-gblk-hero-box-width, 40%), 20rem));
+	padding: clamp(1rem, 3vw, 2rem);
+}
+
+/* Default look without colours of its own: a light card with dark text. */
+.jgor-gblk-hero__box:not(.has-background) {
+	background-color: rgba(255, 255, 255, 0.92);
+}
+
+.jgor-gblk-hero__box:not(.has-text-color) {
+	color: #1e1e1e;
+}
+
+.jgor-gblk-hero__box > :first-child {
+	margin-top: 0;
+}
+
+.jgor-gblk-hero__box > :last-child {
+	margin-bottom: 0;
+}
