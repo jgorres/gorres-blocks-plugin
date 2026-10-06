@@ -1,6 +1,6 @@
 # Gorres Blocks – Konzept und Aufbau
 
-Version: 1.0 · Stand: 06.10.2026 · Plugin-Version: 1.0.0
+Version: 1.1 · Stand: 06.10.2026 · Plugin-Version: 1.1.0
 
 ## 1. Zweck
 
@@ -51,19 +51,33 @@ gorres-blocks/
 └── build.sh                Versionsprüfung, Build, dist/gorres-blocks-<version>.zip
 ```
 
-## 4. Registrierung der Blöcke (geplant)
+## 4. Registrierung der Blöcke (`includes/blocks.php`)
 
 - Jeder Block liegt in `plugin/src/<block>/` mit eigenem `block.json`.
-- `wp-scripts build --blocks-manifest` erzeugt `build/blocks-manifest.php`.
-- Registrierung aller Blöcke mit einem Aufruf von
-  `wp_register_block_types_from_metadata_collection()`.
+- `wp-scripts build --blocks-manifest` erzeugt `build/blocks-manifest.php`
+  (Schlüssel = Ordnername).
+- `wp_register_block_metadata_collection()` meldet das Manifest an, danach
+  `register_block_type()` nur für die eingeschalteten Blöcke.
+  `wp_register_block_types_from_metadata_collection()` scheidet aus, weil es
+  immer alle Blöcke registriert.
+- Manifest-Einträge mit ungültigem Ordnernamen oder ohne `name` werden
+  übersprungen.
 - `build.sh` findet die Blöcke selbst (jeder Ordner in `src/` mit
   `block.json`) und prüft je Block die Version im `block.json`.
 
-## 5. Ein- und Ausschalten (geplant)
+## 5. Ein- und Ausschalten (`includes/admin.php`)
 
-- Einstellungsseite unter „Einstellungen" mit einer Checkbox je Block.
-- Gespeichert in der Option `jgor_gblk_enabled_blocks`.
+- Einstellungsseite „Einstellungen → Gorres Blocks" (`manage_options`) mit
+  einer Checkbox je Block, Titel und Beschreibung aus dem Manifest (übersetzt
+  mit Kontext `block title`/`block description` wie im Core), dazu Link
+  „Settings" in der Plugin-Liste.
+- Gespeichert werden die **ausgeschalteten** Blöcke in der Option
+  `jgor_gblk_disabled_blocks`. Ein neuer Block aus einem Update ist damit
+  sofort eingeschaltet. Ohne Option sind alle Blöcke an.
+- Settings API: Nonce über `settings_fields()`, Rechte über `options.php`,
+  zusätzlich Prüfung im Render-Callback. Die Sanitize-Funktion nimmt das
+  Formular (`submitted` + `enabled[]`) und eine einfache Namensliste
+  (`update_option()`) an und lässt nur vorhandene Blöcke durch.
 - Ausgeschaltete Blöcke werden nicht registriert: kein CSS, kein JS, kein
   Eintrag im Inserter. Bereits verwendete Blöcke zeigt der Editor dann als
   „nicht unterstützt", das gespeicherte Markup bleibt im Frontend erhalten.
@@ -90,4 +104,5 @@ Textkasten als InnerBlocks.
 
 | Version | Datum | Änderung |
 | --- | --- | --- |
+| 1.1 | 06.10.2026 | Registrierung und Einstellungsseite umgesetzt (Plugin 1.1.0); Option speichert ausgeschaltete Blöcke (`jgor_gblk_disabled_blocks`) |
 | 1.0 | 06.10.2026 | Erste Fassung: Gerüst nach Ordnerschema, Namenswahl, Plan für Registrierung, Ein-/Ausschalten und Hero-Block |

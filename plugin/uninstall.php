@@ -14,11 +14,11 @@ defined( 'WP_UNINSTALL_PLUGIN' ) || exit;
  * Options created by the plugin.
  *
  * Every key starts with jgor_gblk_ and is listed here explicitly.
- * jgor_gblk_enabled_blocks holds the list of blocks switched on in the
- * settings screen.
+ * jgor_gblk_disabled_blocks holds the folder names of the blocks switched
+ * off in the settings screen.
  */
 $jgor_gblk_options = array(
-	'jgor_gblk_enabled_blocks',
+	'jgor_gblk_disabled_blocks',
 );
 
 foreach ( $jgor_gblk_options as $jgor_gblk_option ) {

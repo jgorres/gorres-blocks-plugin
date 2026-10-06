@@ -2,20 +2,22 @@
 # This file is distributed under the GPL v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Gorres Blocks 1.0.0\n"
+"Project-Id-Version: Gorres Blocks 1.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/gorres-blocks\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-06T15:33:14+00:00\n"
+"POT-Creation-Date: 2026-10-06T15:44:51+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: gorres-blocks\n"
 
 #. Plugin Name of the plugin
 #: gorres-blocks.php
+#: includes/admin.php:87
+#: includes/admin.php:88
 msgid "Gorres Blocks"
 msgstr ""
 
@@ -40,11 +42,43 @@ msgid "https://joern.gorres.com"
 msgstr ""
 
 #. translators: %s: required PHP version
-#: gorres-blocks.php:69
+#: gorres-blocks.php:72
 #, php-format
 msgid "This plugin requires PHP %s or newer."
 msgstr ""
 
-#: gorres-blocks.php:73
+#: gorres-blocks.php:76
 msgid "Plugin activation stopped"
+msgstr ""
+
+#: includes/admin.php:35
+msgid "Blocks of Gorres Blocks that are switched off."
+msgstr ""
+
+#: includes/admin.php:110
+msgid "Settings"
+msgstr ""
+
+#: includes/admin.php:148
+msgid "Sorry, you are not allowed to manage options for this site."
+msgstr ""
+
+#: includes/admin.php:160
+msgid "No blocks found. The build of the plugin seems to be missing."
+msgstr ""
+
+#: includes/admin.php:163
+msgid "Choose the blocks you want to use. A block that is switched off loads no styles or scripts and does not appear in the block inserter."
+msgstr ""
+
+#: includes/admin.php:164
+msgid "Content already built with a block that is switched off stays on the front end unchanged. The editor shows such a block as unsupported until you switch it on again."
+msgstr ""
+
+#: includes/admin.php:171
+msgid "Blocks"
+msgstr ""
+
+#: includes/admin.php:194
+msgid "Enabled"
 msgstr ""
